@@ -17,6 +17,10 @@
     "uglify-js": "^2.7.5",
     "semantic-release": "^6.3.2"
   },
+  "files": [
+    "dist/",
+    "index.js"
+  ],
   "scripts": {
     "prebuild": "rimraf dist && mkdirp dist",
     "build": "browserify index.js --standalone PouchDB --outfile dist/pouchdb-idb.js",
