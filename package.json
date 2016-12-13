@@ -1,0 +1,43 @@
+{
+  "name": "pouchdb-idb",
+  "version": "0.0.0-development",
+  "description": "> PouchDB, the IndexedDB-only edition",
+  "main": "index.js",
+  "dependencies": {
+    "pouchdb-adapter-idb": "^6.1.0",
+    "pouchdb-adapter-http": "^6.1.0",
+    "pouchdb-core": "^6.1.0",
+    "pouchdb-mapreduce": "^6.1.0",
+    "pouchdb-replication": "^6.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "uglify-js": "^2.7.5",
+    "semantic-release": "^6.3.2"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist && mkdirp dist",
+    "build": "browserify index.js --standalone PouchDB --outfile dist/pouchdb-idb.js",
+    "postbuild": "uglifyjs dist/pouchdb-idb.js --output dist/pouchdb-idb.min.js",
+    "presemantic-release": "npm run build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "node -e 'require(\".\")'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr2m/pouchdb-idb.git"
+  },
+  "keywords": [
+    "pouchdb",
+    "browser",
+    "indexeddb"
+  ],
+  "author": "Gregor Martynus",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gr2m/pouchdb-idb/issues"
+  },
+  "homepage": "https://github.com/gr2m/pouchdb-idb#readme"
+}
