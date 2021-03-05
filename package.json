@@ -29,19 +29,12 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "node -e 'require(\".\")'"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gr2m/pouchdb-idb.git"
-  },
+  "repository": "github:gr2m/pouchdb-idb",
   "keywords": [
     "pouchdb",
     "browser",
     "indexeddb"
   ],
   "author": "Gregor Martynus",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/gr2m/pouchdb-idb/issues"
-  },
-  "homepage": "https://github.com/gr2m/pouchdb-idb#readme"
+  "license": "Apache-2.0"
 }
